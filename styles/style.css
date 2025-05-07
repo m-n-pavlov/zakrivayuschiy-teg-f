@@ -115,14 +115,18 @@
   color: var(--main-color, #000);
   font-family: var(--accent-font-family, monospace);
   font-size: 14px;
-  text-shadow: 0 0 1px var(--text-shadow-text-stroke-color, #fff);
+  text-shadow:
+  -1px 0 var(--text-shadow-text-stroke-color, #fff),
+   1px 0 var(--text-shadow-text-stroke-color, #fff),
+   0 -1px var(--text-shadow-text-stroke-color, #fff),
+   0 1px var(--text-shadow-text-stroke-color, #fff);
 }
 
 @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .card__media-label {
-    text-shadow: none;
     -webkit-text-stroke: 1px var(--text-shadow-text-stroke-color, #fff);
     text-stroke: 1px var(--text-shadow-text-stroke-color, #fff);
+    text-shadow: none;
   }
 }
 
